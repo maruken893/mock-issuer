@@ -16,7 +16,9 @@ const Home: NextPage = () => {
           as="a"
           colorScheme="teal"
           href={
-            process.env.VC_REQUEST_QRCODE ? process.env.VC_REQUEST_QRCODE : ""
+            process.env.VC_REQUEST_QRCODE
+              ? process.env.BASE_URL + process.env.VC_REQUEST_QRCODE
+              : ""
           }
         >
           Issuer page
@@ -28,7 +30,9 @@ const Home: NextPage = () => {
           as="a"
           colorScheme="teal"
           href={
-            process.env.VC_VERIFIER_QRCODE ? process.env.VC_VERIFIER_QRCODE : ""
+            process.env.VC_VERIFIER_QRCODE
+              ? process.env.BASE_URL + process.env.VC_VERIFIER_QRCODE
+              : ""
           }
         >
           Verifier page

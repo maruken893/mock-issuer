@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import { Button, Center, Text } from "@chakra-ui/react";
+import { Center, Text } from "@chakra-ui/react";
 import { QRCodeSVG } from "qrcode.react";
 
-const Verifier: NextPage = () => {
+const Verifier = () => {
   return (
     <>
       <Center>
@@ -10,8 +10,15 @@ const Verifier: NextPage = () => {
       </Center>
       <Center>
         {/* TODO: QRコードのvalue動的に変更させる */}
-        <QRCodeSVG value="https://google.com" />
-        <Button colorScheme="blue">verify credential</Button>
+        <QRCodeSVG
+          value={
+            process.env.VC_PRESENTATION_URL
+              ? "openid://vc/?request_uri=" +
+                process.env.BASE_URL +
+                process.env.VC_PRESENTATION_URL
+              : ""
+          }
+        />
       </Center>
     </>
   );

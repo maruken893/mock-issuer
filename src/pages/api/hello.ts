@@ -1,13 +1,17 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from "next";
+import { keypair, Signer } from "../../lib/testWallet";
 
 type Data = {
-  name: string
-}
+  did: string;
+};
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  const signer = new Signer();
+  await signer.init(keypair);
+  console.log(signer.did);
+  res.status(200).json({ did: signer.did });
 }

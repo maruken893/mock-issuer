@@ -10,15 +10,15 @@ export const keypair: KeyPair = {
   publicJwk: {
     kty: "EC",
     crv: "secp256k1",
-    x: "5cJcnupyti4hcQEQBWgJAIdsxPPElo1GRt0-mGSCUBs",
-    y: "k1dpnuw7SVAzHpC9BAgy2znftNtUEmxINtV9fC5NI4E",
+    x: "rL8Tk9NvUpkVwF0CqTeNRBKH5DxkYt0QWb5zmiwQQdQ",
+    y: "H5ruHCsWu8hbgmQRFl1nH5PlaVQmikVM3ftfUHzaMH4",
   },
   privateJwk: {
     kty: "EC",
     crv: "secp256k1",
-    d: "CoWVrOPTbMxDBs_3ztwOL4xCazwck6XzOcTaAlDrYZk",
-    x: "5cJcnupyti4hcQEQBWgJAIdsxPPElo1GRt0-mGSCUBs",
-    y: "k1dpnuw7SVAzHpC9BAgy2znftNtUEmxINtV9fC5NI4E",
+    d: "H-8ZValLCGfnvo4BghrzJiyQS9gvkOhtfCUmdFgdiFg",
+    x: "rL8Tk9NvUpkVwF0CqTeNRBKH5DxkYt0QWb5zmiwQQdQ",
+    y: "H5ruHCsWu8hbgmQRFl1nH5PlaVQmikVM3ftfUHzaMH4",
   },
 };
 

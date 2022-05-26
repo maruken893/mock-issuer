@@ -27,12 +27,12 @@ export default async function handler(
     payload: {
       response_type: "id_token",
       response_mode: "form_post",
-      client_id:
-        "https://beta.did.msidentity.com/v1.0/e16be63c-a759-44ad-b129-180fce46c1fb/verifiablecredentials/issuance",
+      client_id: process.env.BASE_URL + process.env.PRESENT_URL,
       scope: "openid did_authn",
-      nonce: "6q/bEfKDMyv5BN/9lHebDg==",
+      nonce: "TuX9iA+WJ6LFa9q75Tlh/w==",
       registration: {
-        client_name: "Node.js SDK API Issuer",
+        client_name: "Node.js SDK API Verifier",
+        client_purpose: "the purpose why the verifier asks for one or more VCs",
         subject_id_types_supported: ["did"],
         credential_format_supported: ["jwt"],
       },
@@ -40,18 +40,19 @@ export default async function handler(
         input_descriptors: [
           {
             id: "BlockBaseVC",
+            purpose: "the purpose why the verifier asks for a VC",
             schema: {
               uri: ["BlockBaseVC"],
             },
             issuance: [
               {
-                manifest: process.env.BASE_URL + process.env.MANIFEST_URL,
+                // TODO: 現状manifiestがわからない状態
+                manifest: "",
               },
             ],
           },
         ],
       },
-      prompt: "create",
       iss: signer.did,
       iat: moment().unix(),
       jti: uuidv4().toUpperCase(),
@@ -63,6 +64,5 @@ export default async function handler(
     },
     privateJwk: keypair.privateJwk,
   });
-
   res.status(200).send(issueRequest);
 }

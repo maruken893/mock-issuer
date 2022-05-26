@@ -1,0 +1,39 @@
+{
+  "header": {
+    "header": {
+      "typ": "JWT",
+      "alg": "ES256K",
+      "kid": ""
+    },
+    "payload": {
+      "vc": {
+        "@context": [
+          "https://www.w3.org/2018/credentials/v1",
+          "https://beta.did.msidentity.com/v1.0/e16be63c-a759-44ad-b129-180fce46c1fb/verifiableCredential/contracts/sclvcdev02"
+        ],
+        "type": ["VerifiableCredential", "sclvc"],
+        "credentialSubject": {
+          "displayName": "Test",
+          "sponsorName": "BlockBase"
+        },
+        "credentialStatus": {
+          "id": "https://beta.did.msidentity.com/v1.0/e16be63c-a759-44ad-b129-180fce46c1fb/verifiableCredential/card/status",
+          "type": "PortableIdentityCardServiceCredentialStatus2020"
+        },
+        "exchangeService": {
+          "id": "https://beta.did.msidentity.com/v1.0/e16be63c-a759-44ad-b129-180fce46c1fb/verifiableCredential/card/exchange",
+          "type": "PortableIdentityCardServiceExchange2020"
+        },
+        "revokeService": {
+          "id": "https://beta.did.msidentity.com/v1.0/e16be63c-a759-44ad-b129-180fce46c1fb/verifiableCredential/card/revoke",
+          "type": "PortableIdentityCardServiceRevoke2020"
+        }
+      },
+      "jti": "",
+      "iss": "",
+      "sub": "",
+      "iat": 0,
+      "exp": 0
+    }
+  }
+}

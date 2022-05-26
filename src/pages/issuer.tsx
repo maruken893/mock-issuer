@@ -13,7 +13,9 @@ const Issuer: NextPage = () => {
         <QRCodeSVG
           value={
             process.env.VC_REQUEST_URL
-              ? "openid://vc/?request_uri=" + process.env.VC_REQUEST_URL
+              ? "openid://vc/?request_uri=" +
+                process.env.BASE_URL +
+                process.env.VC_REQUEST_URL
               : ""
           }
         />
