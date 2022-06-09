@@ -28,101 +28,7 @@ export default async function handler(
   const signer = new Signer();
   await signer.init(keypair);
 
-  //  TODO: 一旦manifestをJWTにしないで送る
-  // const manifest = await ION.signJws({
-  //   header: {
-  //     typ: "JWT",
-  //     alg: "ES256K",
-  //     kid: `${signer.did}#signingKey`,
-  //   },
-  //   payload: {
-  //     id: "sclvcdev02",
-  //     display: {
-  //       locale: "en-US",
-  //       contract:
-  //         "https://beta.did.msidentity.com/v1.0/e16be63c-a759-44ad-b129-180fce46c1fb/verifiableCredential/contracts/sclvcdev02",
-  //       card: {
-  //         title: "scl vc",
-  //         issuedBy: "VC 02",
-  //         backgroundColor: "#4169e1",
-  //         textColor: "#000000",
-  //         logo: {
-  //           uri: "https://sclvcstg.blob.core.windows.net/icons/icon_01.png",
-  //           description: "Verified Credential Expert Logo",
-  //         },
-  //         description:
-  //           "Use your verified credential to prove to anyone that you know all about verifiable credentials.",
-  //       },
-  //       consent: {
-  //         title: "Do you want to get your Verified Credential?",
-  //         instructions: "Sign in with your account to get your card.",
-  //       },
-  //       claims: {
-  //         "vc.credentialSubject.firstName": {
-  //           type: "String",
-  //           label: "First name",
-  //         },
-  //         "vc.credentialSubject.lastName": {
-  //           type: "String",
-  //           label: "Last name",
-  //         },
-  //         "vc.credentialSubject.displayName": {
-  //           type: "String",
-  //           label: "Display Name",
-  //         },
-  //         "vc.credentialSubject.sponsorName": {
-  //           type: "String",
-  //           label: "Sponsor Name",
-  //         },
-  //       },
-  //       id: "display",
-  //     },
-
-  //     input: {
-  //       credentialIssuer: process.env.ISSUE_URL,
-  //       issuer: signer.did,
-  //       attestations: {
-  //         idTokens: [
-  //           {
-  //             id: "https://self-issued.me",
-  //             encrypted: false,
-  //             claims: [
-  //               {
-  //                 claim: "$.given_name",
-  //                 required: false,
-  //                 indexed: false,
-  //               },
-  //               {
-  //                 claim: "$.family_name",
-  //                 required: false,
-  //                 indexed: false,
-  //               },
-  //               {
-  //                 claim: "$.displayName",
-  //                 required: false,
-  //                 indexed: false,
-  //               },
-  //               {
-  //                 claim: "$.sponsorName",
-  //                 required: false,
-  //                 indexed: false,
-  //               },
-  //             ],
-  //             required: false,
-  //             configuration: "https://self-issued.me",
-  //             client_id: "a36ec790-fd30-4c81-b43c-7515fa740cc0",
-  //             redirect_uri: "vcclient://openid/",
-  //           },
-  //         ],
-  //       },
-  //       id: "input",
-  //     },
-
-  //     iss: signer.did,
-  //     iat: moment().unix(),
-  //   },
-  //   privateJwk: keypair.privateJwk,
-  // });
+  // TODO: manifestをjsonでまとめrj
 
   const manifest = {
     id: "sclvcdev02",
@@ -168,7 +74,7 @@ export default async function handler(
     },
 
     input: {
-      credentialIssuer: process.env.ISSUE_URL,
+      credentialIssuer: process.env.BASE_URL + process.env.ISSUE_URL,
       issuer: signer.did,
       attestations: {
         idTokens: [

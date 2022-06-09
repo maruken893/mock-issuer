@@ -1,13 +1,15 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
+import ION from "@decentralized-identity/ion-tools";
 
 type Data = {
-  name: string;
+  keypair: string;
 };
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: process.env.VC_REQUEST_URL });
+  let keypair = await ION.generateKeyPair();
+  res.status(200).json({ keypair });
 }
