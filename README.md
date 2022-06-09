@@ -13,7 +13,7 @@ https://kakechimaru.com/ngrok/
 ### .envファイル
 プロジェクトのルートディレクトリに.envファイルを作成する
 ```plaintext
-BASE_URL= [ここはngrokを立ち上げた時のURL]
+BASE_URL=[ここはngrokを立ち上げた時のURL]
 VC_REQUEST_QRCODE=/issuer
 VC_VERIFIER_QRCODE=/verifier
 VC_REQUEST_URL=/api/issue/issue-request/BlockBaseVC
