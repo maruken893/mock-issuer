@@ -5,7 +5,7 @@
 
 ## Getting Started
 
-### ngrokの用意
+### ngrokのセットアップ
 ngrokを使うにはアカウントの登録が必要になります
 ngrokの使い方ガイド
 https://kakechimaru.com/ngrok/
