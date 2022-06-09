@@ -22,7 +22,6 @@ MANIFEST_URL=/api/issue/manifest/BlockBaseVC
 ISSUE_URL=/api/issue/issue/BlockBaseVC
 PRESENT_URL=/api/present/present/BlockBaseVC
 VC_EXCHANGE_URL=/api/vc-exchange
-SERVER_PRIVATE_KEY=aaa
 ```
 
 ### 立ち上げ
