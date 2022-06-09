@@ -10,7 +10,7 @@ ngrokを使うにはアカウントの登録が必要になります
 ngrokの使い方ガイド
 https://kakechimaru.com/ngrok/
 
-###立ち上げ
+###　立ち上げ
 run the ngrok server:
 ```bash
 ngrok http 3000
