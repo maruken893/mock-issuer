@@ -10,12 +10,12 @@ ngrokを使うにはアカウントの登録が必要になります
 ngrokの使い方ガイド
 https://kakechimaru.com/ngrok/
 
-
-First, run the ngrok server:
+###立ち上げ
+run the ngrok server:
 ```bash
-ngrok http [port番号]
+ngrok http 3000
 ```
-First, run the development server:
+run the development server:
 
 ```bash
 npm run dev
