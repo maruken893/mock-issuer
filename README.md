@@ -12,7 +12,7 @@ https://kakechimaru.com/ngrok/
 
 ### .envファイル
 プロジェクトのルートディレクトリに.envファイルを作成する
-```js
+```plaintext
 BASE_URL= [ここはngrokを立ち上げた時のURL]
 VC_REQUEST_QRCODE=/issuer
 VC_VERIFIER_QRCODE=/verifier
